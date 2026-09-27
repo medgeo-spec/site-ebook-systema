@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/style.css">  
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Breathing and Relaxation: The Lost Innate Science","author":{"@type":"Person","name":"Mohamed Hassan Bouazzaoui"},"bookEdition":"2nd edition","bookFormat":"https://schema.org/EBook","inLanguage":"en","isAccessibleForFree":true}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Breathing and Relaxation: The Lost Innate Science","author":{"@type":"Person","name":"Mohamed Hassan Bouazzaoui"},"bookEdition":"2nd edition","bookFormat":"https://schema.org/EBook","inLanguage":"en","isAccessibleForFree":false}</script>
 </head>  
 <body>  
     <header>  
@@ -47,7 +47,7 @@
         <div class="section-wrapper">
             <div class="book-showcase">
                 <div class="book-cover-wrapper">
-                    <img src="../ebook/book-cover.png" alt="التنفس والاسترخاء - العلم الفطري المنسي" class="book-cover" loading="lazy">
+                    <img src="../ebook/book-cover.jpg" alt="التنفس والاسترخاء - العلم الفطري المنسي" class="book-cover" loading="lazy">
                 </div>
                 <div class="book-info">
                     <h3>التنفس والاسترخاء</h3>
@@ -56,8 +56,14 @@
                         دليل شامل يستكشف العلم المنسي للتنفس والاسترخاء. تعلم تقنيات مبنية على الأدلة، افهم فسيولوجيا الهدوء، وادمج تمارين عملية في حياتك اليومية لتحسين صحتك وتركيزك وأدائك.
                     </p>
                     <div class="book-downloads">
-                        <a href="../ebook/Breathing-And-Relaxation-2nd-Edition-EN.pdf" class="button button-download" download>
-                            <span class="btn-icon">📥</span> تحميل ملف PDF (بالإنجليزية، الطبعة الثانية)
+                        <div class="buy-buttons">
+                            <a data-store="amazon" class="button button-download" hidden target="_blank" rel="noopener">اشترِ على أمازون كيندل</a>
+                            <a data-store="direct" class="button button-download button-secondary" hidden target="_blank" rel="noopener">اشترِ الكتاب الإلكتروني (PDF + EPUB)</a>
+                        </div>
+                        <p class="store-note">دفع آمن · تحميل فوري</p>
+                        <p class="book-coming-soon" id="store-soon">سيتوفر الكتاب كاملًا قريبًا جدًا على أمازون وهنا. في الأثناء، اقرأ المقتطف المجاني.</p>
+                        <a href="../ebook/Breathing-And-Relaxation-Free-Sample-EN.pdf" class="button button-sample" download>
+                            <span class="btn-icon">📖</span> اقرأ مقتطفًا مجانيًا (PDF)
                         </a>
                         <p class="book-coming-soon">النسخة العربية (PDF) — قريباً</p>
                     </div>
@@ -94,5 +100,6 @@
         <p>&copy; 2026 Breathe & Relax. جميع الحقوق محفوظة.</p>
         <p class="footer-links"><a href="privacy.html">سياسة الخصوصية</a></p>  
     </footer>  
+    <script src="../js/store-links.js"></script>
 </body>  
 </html>

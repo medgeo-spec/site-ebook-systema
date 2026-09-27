@@ -1,0 +1,13 @@
+{
+  "name": "ebook-build-tools",
+  "private": true,
+  "type": "module",
+  "description": "Builds the full PDF, the free sample PDF and the EPUB from private/ebook/source/book-en.html",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.5.0",
+    "jszip": "^3.10.1"
+  }
+}

@@ -11,3 +11,7 @@ desktop.ini
 
 # Logs
 *.log
+
+# E-book build tools
+private/ebook/tools/node_modules/
+private/ebook/build/

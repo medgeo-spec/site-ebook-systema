@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- E-book cover, rendered at 1600 x 2560 px (KDP recommended size). Rebuild: see private/ebook/README.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  html, body { margin: 0; width: 1600px; height: 2560px; overflow: hidden; }
+  body {
+    position: relative;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #f4efe6;
+    background: linear-gradient(180deg, #0f2e36 0%, #1d4a55 38%, #d9825b 66%, #f2b26b 74%, #1b3f49 74.2%, #0d2a31 100%);
+  }
+  .top { position: absolute; top: 230px; left: 0; right: 0; text-align: center; }
+  .kicker { font-family: 'Segoe UI', Arial, sans-serif; font-size: 44px; letter-spacing: 16px; text-transform: uppercase; color: #a9d3d8; }
+  h1 { margin: 70px 0 0; font-size: 190px; line-height: 1.02; font-weight: normal; letter-spacing: 6px; }
+  .subtitle { margin-top: 60px; font-size: 76px; font-style: italic; color: #f2c998; }
+  .sun { position: absolute; left: 50%; top: 1500px; width: 520px; height: 520px; margin-left: -260px; border-radius: 50%;
+         background: radial-gradient(circle, #fff2c9 0%, #ffd27a 45%, #f59a4f 100%); box-shadow: 0 0 160px 60px rgba(255, 190, 110, 0.45); }
+  /* Opaque sea: the sun sets behind the horizon; the warm glow is a reflection on top of it. */
+  .water { position: absolute; left: 0; right: 0; top: 1895px; height: 665px;
+           background:
+             radial-gradient(ellipse 420px 180px at 50% 0%, rgba(255, 200, 125, 0.45), rgba(255, 200, 125, 0) 100%),
+             linear-gradient(180deg, #2c525a 0%, #16363e 45%, #0d2a31 100%); }
+  .waves { position: absolute; left: 0; right: 0; top: 1930px; }
+  .tagline { position: absolute; left: 0; right: 0; top: 2180px; text-align: center; font-family: 'Segoe UI', Arial, sans-serif;
+             font-size: 42px; letter-spacing: 5px; text-transform: uppercase; color: #bfe0e3; }
+  .author { position: absolute; left: 0; right: 0; bottom: 150px; text-align: center; font-size: 70px; letter-spacing: 4px; color: #f4efe6; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="kicker">Second edition</div>
+    <h1>BREATHING<br>AND<br>RELAXATION</h1>
+    <div class="subtitle">The Lost Innate Science</div>
+  </div>
+  <div class="sun"></div>
+  <div class="water"></div>
+  <svg class="waves" width="1600" height="220" viewBox="0 0 1600 220" aria-hidden="true">
+    <g fill="none" stroke="#ffd9a3" stroke-linecap="round" opacity="0.75">
+      <path d="M520 20 H1080" stroke-width="10"/>
+      <path d="M420 70 H1180" stroke-width="7" opacity="0.8"/>
+      <path d="M330 125 H1270" stroke-width="5" opacity="0.6"/>
+      <path d="M250 185 H1350" stroke-width="3" opacity="0.45"/>
+    </g>
+  </svg>
+  <div class="tagline">The Relaxation Response · Russian Systema</div>
+  <div class="author">Mohamed Hassan Bouazzaoui</div>
+</body>
+</html>

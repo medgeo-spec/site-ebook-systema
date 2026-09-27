@@ -982,3 +982,28 @@ html[dir="rtl"] #exercise-details ul {
   color: inherit;
   text-decoration: underline;
 }
+/* ===== Buy buttons and free sample ===== */
+[hidden] { display: none !important; }
+.buy-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.button-secondary {
+  background: #fff !important;
+  color: var(--primary-dark) !important;
+  border: 2px solid var(--primary);
+}
+.store-note {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin: 0.5rem 0 1rem;
+}
+.button-sample {
+  margin-top: 0.5rem;
+  background: transparent;
+  color: var(--primary-dark);
+  border: 2px dashed var(--primary);
+  padding: 0.7rem 1.4rem;
+  font-weight: 700;
+}
