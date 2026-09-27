@@ -44,7 +44,10 @@
         <h2>اتصل بنا</h2>  
         <div class="section-wrapper">
             <p>أسئلة أو اقتراحات؟ راسلنا!</p>  
-            <form action="#" method="post">  
+            <form name="contact" method="POST" action="/ar/contact.html?sent=1" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact">
+                <input type="hidden" name="language" value="ar">
+                <p hidden><label>Leave empty: <input name="bot-field"></label></p>  
                 <label for="name">الاسم:</label>  
                 <input type="text" id="name" name="name" required>  
 
@@ -55,7 +58,9 @@
                 <textarea id="message" name="message" rows="4" required></textarea>  
 
                 <button type="submit">إرسال</button>  
-            </form>  
+            </form>
+            <p class="form-success" id="form-success" hidden>شكرًا لك! تم إرسال رسالتك وسنرد عليك قريبًا.</p>
+            <script>if (new URLSearchParams(location.search).get('sent') === '1') { document.getElementById('form-success').hidden = false; }</script>  
         </div>
     </section>  
   

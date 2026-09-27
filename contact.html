@@ -44,7 +44,10 @@
         <h2>Contact Us</h2>  
         <div class="section-wrapper">
             <p>Have questions or suggestions? Reach out to us!</p>  
-            <form action="#" method="post">  
+            <form name="contact" method="POST" action="/contact.html?sent=1" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact">
+                <input type="hidden" name="language" value="en">
+                <p hidden><label>Leave empty: <input name="bot-field"></label></p>  
                 <label for="name">Name:</label>  
                 <input type="text" id="name" name="name" required>  
 
@@ -55,7 +58,9 @@
                 <textarea id="message" name="message" rows="4" required></textarea>  
 
                 <button type="submit">Send Message</button>  
-            </form>  
+            </form>
+            <p class="form-success" id="form-success" hidden>Thank you! Your message has been sent. We will reply soon.</p>
+            <script>if (new URLSearchParams(location.search).get('sent') === '1') { document.getElementById('form-success').hidden = false; }</script>  
         </div>
     </section>  
   

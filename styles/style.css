@@ -909,3 +909,12 @@ html[dir="rtl"] #exercise-details ul {
     margin-right: 1.5rem;
     margin-left: 0;
 }
+/* ===== Contact form confirmation ===== */
+.form-success {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  background: #e8f7ee;
+  border: 1px solid #9fd8b4;
+  color: #1e6b3b;
+}
