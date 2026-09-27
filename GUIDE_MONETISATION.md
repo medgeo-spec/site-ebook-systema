@@ -7,19 +7,21 @@ Deux stratégies possibles. Choisissez-en une (dites-moi laquelle, je fais les m
 
 ## Option A : Vendre le livre (revenu direct)
 
-Utiliser une plateforme qui vend **à votre place** : elle encaisse, gère la TVA et envoie le PDF à l'acheteur.
-| Plateforme | Frais | Particularité |
+Vendeur établi au Maroc, clients en Europe et aux États-Unis : il faut une plateforme qui vend **à votre
+place** (« merchant of record »). Elle encaisse, gère la TVA européenne et les taxes américaines, envoie le
+PDF à l'acheteur, puis vous verse l'argent au Maroc.
+| Plateforme | Frais | Pour vous |
 |---|---|---|
-| **Payhip** (payhip.com) | 5 % (gratuit) | Très simple, paiement PayPal et carte, TVA UE gérée |
-| **Lemon Squeezy** | 5 % + 0,50 $ | Paiement vers votre banque ou PayPal, TVA mondiale gérée |
-| **Gumroad** | 10 % + 0,50 $ | Très connu, virement ou PayPal |
-| **Amazon Kindle (KDP)** | 30 à 65 % | Énorme visibilité, format Kindle au lieu de PDF |
+| **Lemon Squeezy** (recommandé) | ≈ 5 % + 0,50 $ | Accepte les vendeurs marocains, **virement sur compte bancaire marocain**, livre le fichier automatiquement |
+| **Amazon Kindle (KDP)** | 30 à 65 % | Énorme visibilité, format Kindle au lieu de PDF, paiement par virement |
+| Payhip, Gumroad | 5 à 10 % | Déconseillé : ils utilisent votre propre compte PayPal ou Stripe, difficile à obtenir depuis le Maroc |
 
-Étapes (exemple avec Payhip, 20 min) :
-1. Créer un compte sur https://payhip.com → **Add product → Digital download**
-2. Téléverser le PDF, la couverture (`ebook/book-cover.png`), un titre, un prix (4,99 à 9,99 € est courant pour un e-book)
-3. Payhip → **Settings → Payouts** : relier PayPal ou votre compte bancaire
-4. Copier le lien du produit (ex. `https://payhip.com/b/XXXX`)
+Étapes (Lemon Squeezy, 20 min) :
+1. Créer un compte sur https://app.lemonsqueezy.com et une boutique
+2. **Products → New product** → type **Single payment**, téléverser le PDF (onglet **Files**), la couverture
+   (`ebook/book-cover.png`), un titre, un prix (4,99 à 9,99 € est courant pour un e-book)
+3. **Settings → Payouts** : votre compte bancaire marocain (RIB/IBAN et code SWIFT) ; puis **Activate store**
+4. Copier le lien de partage du produit (bouton **Share**)
 5. Dans `book.html` (et `fr/`, `es/`, `ar/`) : remplacer le lien de téléchargement par ce lien d'achat
 6. **Retirer le PDF du site** (`ebook/*.pdf`), sinon il reste téléchargeable gratuitement à son adresse
 
@@ -35,8 +37,6 @@ Le livre sert à construire une **liste de lecteurs**, à qui vous proposez ensu
 3. Remplacer le bouton de téléchargement par ce formulaire (je peux le faire)
 4. Ajouter un **produit payant** à proposer à la liste (voir option A pour les plateformes)
 
-Complément possible dans les deux cas : un bouton de soutien **Ko-fi** ou **Buy Me a Coffee** (dons).
-
 ---
 
 ## Formulaire de contact
@@ -45,7 +45,10 @@ Il envoyait les messages vers `#` (perdus). Il utilise maintenant **Netlify Form
 2. Netlify → votre site → **Forms** : le formulaire `contact` apparaît (sinon **Enable form detection** puis redéployer)
 3. **Form notifications → Email notification** : recevoir chaque message par e-mail
 
-## Encaissement et impôts
-- Les plateformes (Payhip, Lemon Squeezy, Gumroad) reversent l'argent **chaque semaine ou chaque mois**
-  sur PayPal ou votre compte bancaire, **TVA déjà déduite** pour les ventes aux particuliers.
-- Les revenus restent imposables dans votre pays : déclarez-les selon votre statut.
+## Encaissement et impôts (Maroc)
+- Lemon Squeezy et Amazon versent l'argent **sur votre compte bancaire marocain**, **TVA et taxes étrangères
+  déjà réglées** par eux.
+- Au Maroc, ce sont des revenus d'export imposables : statut **auto-entrepreneur** pour démarrer, et
+  rapatriement des devises (automatique ici, puisque le virement arrive au Maroc).
+- Faites valider votre statut par un comptable marocain : votre client officiel est la plateforme, et
+  l'auto-entrepreneur est plafonné par client au-delà d'un certain montant.
