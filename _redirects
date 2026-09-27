@@ -1,0 +1,3 @@
+# Netlify: the e-book source and internal docs are not public pages.
+/ebook/source/*        /index.html  404!
+/GUIDE_MONETISATION.md /index.html  404!

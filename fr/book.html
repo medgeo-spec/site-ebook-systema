@@ -3,11 +3,13 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Le livre | Breathe & Relax</title>  
+    <title>Le livre | Breathe & Relax</title>
+    <meta name="description" content="Respiration et relaxation : la science innée oubliée. Un e-book pratique sur la réponse de relaxation et la respiration Systema, avec exercices et programme de 7 jours.">  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/style.css">  
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Breathing and Relaxation: The Lost Innate Science","author":{"@type":"Person","name":"Mohamed Hassan Bouazzaoui"},"bookEdition":"2nd edition","bookFormat":"https://schema.org/EBook","inLanguage":"en","isAccessibleForFree":true}</script>
 </head>  
 <body>  
     <header>  
@@ -54,10 +56,34 @@
                         Un guide complet qui explore la science oubliée de la respiration et de la relaxation. Apprenez des techniques fondées sur des preuves, comprenez la physiologie du calme et intégrez des exercices pratiques dans votre quotidien pour améliorer votre santé, votre concentration et vos performances.
                     </p>
                     <div class="book-downloads">
-                        <a href="../ebook/Breathing-And-Relaxation-The-Lost-Innate-Science.pdf" class="button button-download" download>
-                            <span class="btn-icon">📥</span> Télécharger PDF (Anglais)
+                        <a href="../ebook/Breathing-And-Relaxation-2nd-Edition-EN.pdf" class="button button-download" download>
+                            <span class="btn-icon">📥</span> Télécharger le PDF (anglais, 2ᵉ édition)
                         </a>
                         <p class="book-coming-soon">Version française (PDF) — Bientôt disponible</p>
+                    </div>
+                    <div class="book-contents">
+                        <h4>Au sommaire</h4>
+                        <ul>
+                            <li>La science du stress et la « réponse de relaxation » du Dr Herbert Benson</li>
+                            <li>L’approche russe du Systema : respiration, relaxation, posture et mouvement</li>
+                            <li>Des techniques pas à pas : respiration diaphragmatique, 4-7-8, carrée, en vague et continue</li>
+                            <li>Trois exercices classiques du Systema et un programme de démarrage de 7 jours</li>
+                            <li>Des consignes de sécurité et des références scientifiques</li>
+                        </ul>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Restez informé</h4>
+                        <p>Recevez de nouveaux exercices et soyez prévenu de la sortie des éditions française et arabe. Pas de spam, désinscription à tout moment.</p>
+                        <form name="newsletter" method="POST" action="/fr/book.html?subscribed=1" data-netlify="true" netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="newsletter">
+                            <input type="hidden" name="language" value="fr">
+                            <p hidden><label>Leave empty: <input name="bot-field"></label></p>
+                            <input type="email" name="email" required placeholder="Votre e-mail" aria-label="Votre e-mail">
+                            <label class="consent"><input type="checkbox" name="consent" value="yes" required> J’accepte de recevoir des e-mails de Breathe &amp; Relax. Voir notre <a href="privacy.html">politique de confidentialité</a>.</label>
+                            <button type="submit" class="button">S’inscrire</button>
+                        </form>
+                        <p class="form-success" id="newsletter-success" hidden>Merci ! Votre inscription est confirmée.</p>
+                        <script>if (new URLSearchParams(location.search).get('subscribed') === '1') { document.getElementById('newsletter-success').hidden = false; }</script>
                     </div>
                 </div>
             </div>
@@ -65,7 +91,8 @@
     </section>
   
     <footer>  
-        <p>&copy; 2024 Breathe & Relax. Tous droits réservés.</p>  
+        <p>&copy; 2026 Breathe & Relax. Tous droits réservés.</p>
+        <p class="footer-links"><a href="privacy.html">Confidentialité</a></p>  
     </footer>  
 </body>  
 </html>

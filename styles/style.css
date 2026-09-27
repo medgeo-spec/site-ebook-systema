@@ -918,3 +918,67 @@ html[dir="rtl"] #exercise-details ul {
   border: 1px solid #9fd8b4;
   color: #1e6b3b;
 }
+
+/* ===== Book page: contents and newsletter ===== */
+.book-contents,
+.newsletter {
+  margin-top: 1.5rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(47, 128, 140, 0.25);
+}
+.book-contents h4,
+.newsletter h4 {
+  margin: 0 0 0.6rem;
+}
+.book-contents ul {
+  margin: 0;
+  padding-inline-start: 1.2rem;
+}
+.book-contents li {
+  margin-bottom: 0.35rem;
+}
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+.newsletter input[type="email"] {
+  padding: 0.7rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #c9d8db;
+  font: inherit;
+}
+.newsletter .consent {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  display: block;
+}
+.newsletter .consent input {
+  margin-inline-end: 0.4rem;
+  vertical-align: middle;
+}
+.newsletter button {
+  align-self: flex-start;
+  border: none;
+  padding: 0.7rem 1.6rem;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary);
+}
+.newsletter button:hover {
+  background: var(--primary-dark);
+}
+
+/* ===== Footer links ===== */
+.footer-links {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+}
+.footer-links a {
+  color: inherit;
+  text-decoration: underline;
+}

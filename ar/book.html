@@ -3,11 +3,13 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>الكتاب | Breathe & Relax</title>  
+    <title>الكتاب | Breathe & Relax</title>
+    <meta name="description" content="التنفس والاسترخاء: العلم الفطري المنسي. كتاب إلكتروني عملي عن استجابة الاسترخاء وتنفس السيستيما، مع تمارين وبرنامج لمدة 7 أيام.">  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/style.css">  
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Breathing and Relaxation: The Lost Innate Science","author":{"@type":"Person","name":"Mohamed Hassan Bouazzaoui"},"bookEdition":"2nd edition","bookFormat":"https://schema.org/EBook","inLanguage":"en","isAccessibleForFree":true}</script>
 </head>  
 <body>  
     <header>  
@@ -54,10 +56,34 @@
                         دليل شامل يستكشف العلم المنسي للتنفس والاسترخاء. تعلم تقنيات مبنية على الأدلة، افهم فسيولوجيا الهدوء، وادمج تمارين عملية في حياتك اليومية لتحسين صحتك وتركيزك وأدائك.
                     </p>
                     <div class="book-downloads">
-                        <a href="../ebook/Breathing-And-Relaxation-The-Lost-Innate-Science.pdf" class="button button-download" download>
-                            <span class="btn-icon">📥</span> تحميل PDF (الإنجليزية)
+                        <a href="../ebook/Breathing-And-Relaxation-2nd-Edition-EN.pdf" class="button button-download" download>
+                            <span class="btn-icon">📥</span> تحميل ملف PDF (بالإنجليزية، الطبعة الثانية)
                         </a>
                         <p class="book-coming-soon">النسخة العربية (PDF) — قريباً</p>
+                    </div>
+                    <div class="book-contents">
+                        <h4>محتوى الكتاب</h4>
+                        <ul>
+                            <li>علم الضغط النفسي و«استجابة الاسترخاء» التي اكتشفها الدكتور هربرت بنسون</li>
+                            <li>منهج السيستيما الروسي: التنفس والاسترخاء ووضعية الجسم والحركة</li>
+                            <li>تقنيات خطوة بخطوة: التنفس الحجابي و4-7-8 والتنفس المربع والتنفس الموجي والمستمر</li>
+                            <li>ثلاثة تمارين كلاسيكية من السيستيما وبرنامج انطلاق لمدة 7 أيام</li>
+                            <li>إرشادات السلامة ومراجع علمية</li>
+                        </ul>
+                    </div>
+                    <div class="newsletter">
+                        <h4>ابقَ على اطلاع</h4>
+                        <p>احصل على تمارين جديدة وكن أول من يعلم بصدور الطبعتين العربية والفرنسية. بلا رسائل مزعجة، ويمكنك إلغاء الاشتراك في أي وقت.</p>
+                        <form name="newsletter" method="POST" action="/ar/book.html?subscribed=1" data-netlify="true" netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="newsletter">
+                            <input type="hidden" name="language" value="ar">
+                            <p hidden><label>Leave empty: <input name="bot-field"></label></p>
+                            <input type="email" name="email" required placeholder="بريدك الإلكتروني" aria-label="بريدك الإلكتروني">
+                            <label class="consent"><input type="checkbox" name="consent" value="yes" required> أوافق على تلقي رسائل من Breathe &amp; Relax. اطلع على <a href="privacy.html">سياسة الخصوصية</a>.</label>
+                            <button type="submit" class="button">اشترك</button>
+                        </form>
+                        <p class="form-success" id="newsletter-success" hidden>شكرًا لك! تم تأكيد اشتراكك.</p>
+                        <script>if (new URLSearchParams(location.search).get('subscribed') === '1') { document.getElementById('newsletter-success').hidden = false; }</script>
                     </div>
                 </div>
             </div>
@@ -65,7 +91,8 @@
     </section>
   
     <footer>  
-        <p>&copy; 2024 Breathe & Relax. جميع الحقوق محفوظة.</p>  
+        <p>&copy; 2026 Breathe & Relax. جميع الحقوق محفوظة.</p>
+        <p class="footer-links"><a href="privacy.html">سياسة الخصوصية</a></p>  
     </footer>  
 </body>  
 </html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<!--
+  Source of the e-book, 2nd edition. Edit this file, then rebuild the PDF (see ebook/source/README.md).
+  Sections marked "NEW IN THE 2ND EDITION" were added during the revision: the author should review them.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Breathing and Relaxation: The Lost Innate Science</title>
+<meta name="author" content="Mohamed Hassan Bouazzaoui">
+<style>
+  @page {
+    size: 6in 9in;
+    margin: 0.75in 0.7in 0.8in 0.7in;
+    @bottom-center { content: counter(page); font-family: Georgia, serif; font-size: 9pt; color: #6b7a86; }
+  }
+  @page cover { margin: 0; @bottom-center { content: none; } }
+  @page front { @bottom-center { content: none; } }
+  html { font-family: Georgia, 'Times New Roman', serif; font-size: 10.5pt; line-height: 1.55; color: #1f2a33; }
+  body { margin: 0; }
+  .cover { page: cover; height: 9in; width: 6in; display: flex; align-items: center; justify-content: center; background: #e9f3f5; break-after: page; }
+  .cover img { width: 6in; height: 9in; object-fit: cover; }
+  .front { page: front; break-after: page; }
+  .title-page { text-align: center; padding-top: 2in; }
+  .title-page h1 { font-size: 24pt; line-height: 1.2; margin: 0 0 8pt; color: #1b4d57; }
+  .title-page .subtitle { font-size: 14pt; font-style: italic; color: #3c6d76; margin-bottom: 1.4in; }
+  .title-page .author { font-size: 12pt; letter-spacing: 0.04em; }
+  .title-page .edition { font-size: 9.5pt; color: #6b7a86; margin-top: 6pt; }
+  .small { font-size: 8.5pt; line-height: 1.45; color: #3a4750; }
+  h2.part { font-size: 17pt; color: #1b4d57; text-align: center; margin: 2in 0 0; break-before: page; break-after: page; }
+  h2.part span { display: block; font-size: 11pt; letter-spacing: 0.12em; text-transform: uppercase; color: #6b9aa2; margin-bottom: 8pt; }
+  h2.chapter { font-size: 16pt; color: #1b4d57; margin: 0 0 14pt; break-before: page; line-height: 1.25; }
+  h2.chapter span { display: block; font-size: 9.5pt; letter-spacing: 0.12em; text-transform: uppercase; color: #6b9aa2; margin-bottom: 4pt; }
+  h3 { font-size: 12pt; color: #24606b; margin: 16pt 0 6pt; break-after: avoid; }
+  h4 { font-size: 10.5pt; margin: 12pt 0 4pt; break-after: avoid; }
+  p { margin: 0 0 8pt; text-align: justify; hyphens: auto; orphans: 3; widows: 3; }
+  ul, ol { margin: 0 0 8pt; padding-left: 18pt; }
+  li { margin-bottom: 4pt; }
+  .toc ol { list-style: none; padding-left: 0; }
+  .toc li { margin: 3pt 0; }
+  .toc .part-entry { font-weight: bold; margin-top: 9pt; color: #1b4d57; }
+  .toc a { color: inherit; text-decoration: none; }
+  .toc .sub { padding-left: 14pt; }
+  .box { border: 1px solid #b9d6db; background: #f1f8f9; border-radius: 6pt; padding: 8pt 10pt; margin: 10pt 0; break-inside: avoid; }
+  .box.warning { border-color: #e7c07a; background: #fdf7ea; }
+  .box h4 { margin-top: 0; color: #24606b; }
+  .box.warning h4 { color: #8a5a00; }
+  .new { font-size: 7.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: #8a5a00; display: block; margin-bottom: 4pt; }
+  table { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 8pt 0; }
+  th, td { border: 1px solid #c9dde0; padding: 4pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #e3f0f2; }
+  .refs li { font-size: 9pt; text-align: left; }
+  .center { text-align: center; }
+  a { color: #1b6b78; }
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<section class="cover"><img src="../book-cover.png" alt="Book cover"></section>
+
+<!-- Title page -->
+<section class="front title-page">
+  <h1>Breathing and Relaxation</h1>
+  <div class="subtitle">The Lost Innate Science</div>
+  <div class="author">Mohamed Hassan Bouazzaoui</div>
+  <div class="edition">Second edition</div>
+</section>
+
+<!-- Copyright and disclaimer -->
+<section class="front small" style="padding-top: 3.2in;">
+  <p>Breathing and Relaxation: The Lost Innate Science<br>Second edition, 2026</p>
+  <p>© 2026 Mohamed Hassan Bouazzaoui. All rights reserved. No part of this book may be reproduced or distributed without the written permission of the author, except for brief quotations in reviews.</p>
+  <p><strong>Health disclaimer.</strong> This book is for educational purposes only. It is not medical advice and does not replace diagnosis or treatment by a qualified health professional. The practices described here are intended to complement, never to replace, medical care. Consult your doctor before starting breathing or relaxation practices if you are pregnant, or if you have a heart, lung, blood-pressure, neurological or psychiatric condition. Stop any exercise that causes dizziness, pain or distress.</p>
+  <p><strong>About the examples.</strong> The people described in the illustrative examples are composites created for teaching purposes; they do not describe real patients.</p>
+</section>
+
+<!-- Contents -->
+<section class="front toc">
+  <h2 class="chapter" style="break-before: auto;">Contents</h2>
+  <ol>
+    <li><a href="#intro">Introduction</a></li>
+    <li class="part-entry"><a href="#part1">Part 1 · The Science of the Relaxation Response</a></li>
+    <li class="sub"><a href="#ch1">1. The Stress Epidemic and Its Impact on Health</a></li>
+    <li class="sub"><a href="#ch2">2. Dr. Herbert Benson's Discovery of the Relaxation Response</a></li>
+    <li class="sub"><a href="#ch3">3. The Role of Breathing in the Relaxation Response</a></li>
+    <li class="part-entry"><a href="#part2">Part 2 · The Russian Systema Approach to Breathing and Relaxation</a></li>
+    <li class="sub"><a href="#ch4">4. Introduction to Systema: The Art of Natural Movement</a></li>
+    <li class="sub"><a href="#ch5">5. Systema Breathing Techniques</a></li>
+    <li class="sub"><a href="#ch6">6. Systema Relaxation Practices</a></li>
+    <li class="part-entry"><a href="#part3">Part 3 · Integrating the Relaxation Response and Systema</a></li>
+    <li class="sub"><a href="#ch7">7. Self-Control and Emotional Regulation</a></li>
+    <li class="sub"><a href="#ch8">8. Supporting People Living with Chronic Diseases</a></li>
+    <li class="sub"><a href="#ch9">9. Daily Practices for a Calmer Life</a></li>
+    <li class="part-entry"><a href="#part4">Part 4 · Advanced Applications and Future Directions</a></li>
+    <li class="sub"><a href="#ch10">10. High-Stress Environments</a></li>
+    <li class="sub"><a href="#ch11">11. The Future of Mind-Body Medicine</a></li>
+    <li class="part-entry"><a href="#conclusion">Conclusion: The Power to Transform Lives</a></li>
+    <li class="sub"><a href="#plan">Your 7-Day Starter Plan</a></li>
+    <li class="sub"><a href="#safety">Safety First</a></li>
+    <li class="sub"><a href="#references">References and Further Reading</a></li>
+    <li class="sub"><a href="#author">About the Author</a></li>
+  </ol>
+</section>
+
+<!-- Introduction -->
+<h2 class="chapter" id="intro">Introduction</h2>
+<p>In a world that moves at breakneck speed, stress has become an inescapable part of life. From the pressures of work and relationships to the constant barrage of information, our bodies and minds are often in a state of overdrive. Chronic stress takes a toll on our health and is associated with a wide range of conditions, from hypertension and irritable bowel syndrome (IBS) to autoimmune disorders and mental health challenges.</p>
+<p>But what if there were a simple, scientifically studied way to counteract the effects of stress? This is where the work of Dr. Herbert Benson comes in. In the 1970s, Dr. Benson, a Harvard-trained cardiologist, described the <em>Relaxation Response</em>: a natural, innate mechanism that counteracts the stress response and promotes deep relaxation. His research showed that practices such as meditation, prayer and controlled breathing could elicit this response, with measurable effects on the body.</p>
+<p>At the heart of the Relaxation Response is breathing. Breathing is unique in that it is both an automatic and a voluntary function. By consciously changing the way we breathe, we can influence our nervous system and shift from the fight-or-flight response to a state of calm and balance. This connection between breath and relaxation is central to many traditional practices, including yoga, tai chi and the Russian martial art of Systema.</p>
+<p>Systema, which translates as "the system," is a holistic approach to movement, breathing and relaxation. Developed in Russia, it emphasizes natural, effortless breathing as the foundation of physical and mental resilience. Its techniques are designed to reduce tension, sharpen focus and preserve calm even in high-stress situations.</p>
+<p>This book explores the science behind the Relaxation Response and the art of Systema breathing. It offers practical tools to strengthen self-control, improve well-being and support people living with chronic diseases. Whether you want to manage stress, support your health or simply live a more balanced life, the practices in this book can help you tap into the power of calm. The book ends with a 7-day starter plan so that you can begin practicing today.</p>
+
+<!-- PART 1 -->
+<h2 class="part" id="part1"><span>Part 1</span>The Science of the Relaxation Response</h2>
+
+<h2 class="chapter" id="ch1"><span>Chapter 1</span>The Stress Epidemic and Its Impact on Health</h2>
+<h3>The Physiology of Stress</h3>
+<p>What exactly happens inside our bodies when we experience stress? To understand this, we must look at the physiology of stress, and in particular at the fight-or-flight response, a mechanism that evolved to help us survive in the face of danger.</p>
+<h3>The Fight-or-Flight Response: A Survival Mechanism</h3>
+<p>The fight-or-flight response is an automatic physiological reaction to perceived threats, whether physical, emotional or psychological. It is orchestrated by the sympathetic nervous system, a branch of the autonomic nervous system that prepares the body to confront danger or flee from it. When the brain perceives a threat, it sends a distress signal to the hypothalamus, which activates the sympathetic nervous system.</p>
+<p>This activation triggers a cascade of hormonal changes, most notably the release of adrenaline (epinephrine) and cortisol by the adrenal glands. Adrenaline increases heart rate, raises blood pressure and boosts energy by stimulating the breakdown of glycogen into glucose. Cortisol, often called the "stress hormone," increases the availability of glucose and temporarily suppresses functions that are not immediately needed in a life-threatening situation, such as digestion and parts of the immune response.</p>
+<h3>The Body in Overdrive: Short-Term versus Chronic Stress</h3>
+<p>In the short term, the fight-or-flight response is highly adaptive. It sharpens our senses, increases our strength and speed and prepares us to deal with immediate threats. Problems arise when this response is activated too often or for too long. Chronic stress, the persistent activation of the fight-or-flight response, can have lasting effects on the body.</p>
+<p>When the body is repeatedly flooded with stress hormones, health can suffer. Sustained stress is associated with higher blood pressure, which strains the cardiovascular system. It is also linked to digestive complaints such as irritable bowel syndrome, and the long-term dysregulation of the immune system can make the body more susceptible to infections and may aggravate autoimmune disorders, in which the immune system attacks the body's own tissues.</p>
+<h3>The Role of the Amygdala and the Prefrontal Cortex</h3>
+<p>The fight-or-flight response is not only a hormonal reaction; it also involves key brain structures. The amygdala, an almond-shaped cluster of nuclei deep within the brain, plays a crucial role in processing emotions, particularly fear. When the amygdala detects a threat, it signals the hypothalamus, which activates the sympathetic nervous system.</p>
+<p>The prefrontal cortex, the part of the brain responsible for decision-making and rational thought, helps modulate this response. Ideally, it regulates the amygdala and allows us to assess whether a perceived threat is real. Under chronic stress, however, this regulation can weaken, leading to exaggerated stress reactions.</p>
+<h3>The Vicious Cycle of Chronic Stress</h3>
+<p>Chronic stress creates a cycle that can be difficult to break. Research suggests that prolonged stress can affect brain structure and function, including the hippocampus, a region involved in memory and emotion regulation. This can make it harder to regulate emotions, which in turn feeds the stress response.</p>
+<p>Chronic stress can also encourage unhelpful behaviors such as overeating, substance use and social withdrawal. These behaviors create new stressors and keep the cycle going.</p>
+<h3>Breaking the Cycle</h3>
+<p>Understanding the physiology of stress is the first step toward breaking this cycle. In the next chapter, we will explore Dr. Herbert Benson's discovery of the Relaxation Response, the biological opposite of the stress response. By learning to activate it, we can counteract the harmful effects of chronic stress and support our overall well-being.</p>
+
+<h2 class="chapter" id="ch2"><span>Chapter 2</span>Dr. Herbert Benson's Discovery of the Relaxation Response</h2>
+<p>In the late 1960s and early 1970s, Dr. Herbert Benson, a cardiologist and researcher at Harvard Medical School, studied the physiological effects of meditation. He identified a natural, innate response of the body that he called the <em>Relaxation Response</em>, the biological opposite of the fight-or-flight response (Benson, Beary &amp; Carol, 1974). His work provided a scientific framework for understanding relaxation, and practical tools for harnessing its benefits.</p>
+<h3>The Biological Opposite of the Stress Response</h3>
+<p>The fight-or-flight response, driven by the sympathetic nervous system, prepares the body to face immediate threats by increasing heart rate, blood pressure and stress hormones. The Relaxation Response, by contrast, is associated with the parasympathetic nervous system, which promotes calm and restoration. When it is activated, heart rate and breathing slow down, blood pressure decreases, muscles release their tension and the body's oxygen consumption drops.</p>
+<p>Dr. Benson showed that the Relaxation Response is not merely the absence of stress but an active physiological state that can be deliberately elicited. This demonstrated that people could <em>actively</em> counteract the effects of chronic stress by engaging in specific practices.</p>
+<h3>The Key Components</h3>
+<p>Dr. Benson described simple elements that help elicit the Relaxation Response. They can be applied through many practices, including meditation, prayer, yoga, or even repetitive activities such as jogging or knitting. In his later work he emphasized the first two as the essential steps:</p>
+<ol>
+  <li><strong>Repetition.</strong> Focusing on a word, sound, phrase, prayer, movement or on the breath, in a repetitive way. Repetition quiets the mind and shifts attention away from stressful thoughts. In meditation, a mantra (a repeated word or phrase) is often used to anchor the mind.</li>
+  <li><strong>A passive attitude.</strong> Letting go of the need to control the process or to achieve a particular result. When distracting thoughts arise, you simply notice them, without judgment, and gently return to the repetition.</li>
+  <li><strong>Focus.</strong> Directing attention to a single point: the breath, an image or the sensations of the body. Concentrating on one point breaks the chain of stress-inducing thoughts.</li>
+  <li><strong>A quiet environment.</strong> Not always necessary, but minimizing distractions makes it easier to practice, especially at the beginning.</li>
+</ol>
+<h3>What the Research Shows</h3>
+<p>Dr. Benson's work was followed by decades of studies on relaxation and breathing practices. The main effects reported include:</p>
+<ol>
+  <li><strong>Lower heart rate and blood pressure.</strong> By engaging the parasympathetic nervous system, relaxation practices counteract the cardiovascular effects of stress. This makes them a useful complement in the management of hypertension, always alongside medical follow-up.</li>
+  <li><strong>Immune function.</strong> Chronic stress can dysregulate the immune system. Studies suggest that regular relaxation practice may help, mainly by reducing the stress load; the effects vary from person to person and remain an active area of research.</li>
+  <li><strong>Emotional well-being.</strong> Relaxation practices have been shown to reduce symptoms of anxiety and stress, and can complement the treatment of mental health conditions.</li>
+  <li><strong>Better sleep.</strong> By reducing mental and physical arousal, they help many people fall asleep more easily.</li>
+  <li><strong>Pain management.</strong> By lowering muscle tension and promoting calm, relaxation can reduce the perception of pain and help people cope with chronic pain.</li>
+</ol>
+<h3>Practical Applications</h3>
+<p>The Relaxation Response is now widely recognized as a tool for stress management. Related approaches are used in programs such as mindfulness-based stress reduction (MBSR) and cognitive-behavioral therapy (CBT), and in clinical settings to support people living with chronic illnesses. It is accessible to everyone, regardless of age, fitness level or background, and requires no special equipment.</p>
+<div class="box">
+  <h4>Try it: the classic Relaxation Response (10 minutes)</h4>
+  <ol>
+    <li>Sit comfortably, close your eyes and relax your muscles, from your feet to your face.</li>
+    <li>Breathe through your nose. Each time you breathe out, silently repeat a word you like (for example "calm," "one," or a short prayer).</li>
+    <li>When thoughts come, notice them without judgment and return to your word.</li>
+    <li>Continue for 10 to 20 minutes, then sit quietly for a minute before getting up.</li>
+  </ol>
+</div>
+<p>In the next chapter, we will explore the central role of breathing in activating the Relaxation Response.</p>
+
+<h2 class="chapter" id="ch3"><span>Chapter 3</span>The Role of Breathing in the Relaxation Response</h2>
+<p>Breathing is one of the most fundamental and powerful tools we have for influencing our physiological and emotional states. It is an automatic process controlled by the brainstem, yet it can also be consciously regulated. This dual nature makes it a gateway to the Relaxation Response.</p>
+<h3>Breath and the Nervous System</h3>
+<p>The autonomic nervous system (ANS) regulates the body's involuntary functions, such as heart rate, digestion and breathing rate. It has two main branches: the sympathetic nervous system, which governs the fight-or-flight response, and the parasympathetic nervous system, which promotes rest, relaxation and recovery. Controlled breathing is one of the most direct ways to engage the parasympathetic branch.</p>
+<p>Slow breathing, particularly with a longer exhalation, engages the vagus nerve, the main nerve of the parasympathetic system. The vagus nerve acts as a communication highway between the brain and the body, helping to slow the heart and promote relaxation. This is why diaphragmatic breathing, in which the breath is drawn deep into the abdomen, is so effective at reducing stress.</p>
+<p>Research shows that slow breathing, around six breaths per minute, increases heart rate variability (HRV), a marker of the body's ability to adapt to stress (Russo, Santarelli &amp; O'Rourke, 2017; Zaccaro et al., 2018). Higher HRV is associated with better emotional regulation and cardiovascular health.</p>
+<h3>The Connection Between Breath, Mind and Emotions</h3>
+<p>The breath is often described as a bridge between the body and the mind. Slow, rhythmic breathing sends signals of safety to the brain, and paying attention to the breath brings us back to the present moment, breaking the cycle of rumination and worry that often accompanies stress. Over time, this mindful awareness of the breath helps us observe thoughts and emotions without being overwhelmed by them.</p>
+<p>The relationship works in both directions. When we are anxious or angry, our breathing becomes shallow and rapid; when we are calm, it becomes slow and deep. By becoming aware of this connection, we can use the breath to regulate our emotions and create a positive feedback loop of calm.</p>
+<h3>Evidence-Based Benefits</h3>
+<p>Studies of practices such as diaphragmatic breathing and slow paced breathing report that they can:</p>
+<ul>
+  <li><strong>Reduce stress and anxiety.</strong> In one study, eight weeks of diaphragmatic breathing training reduced negative affect and lowered cortisol in healthy adults (Ma et al., 2017). Breathing techniques are also used as a complement in the care of anxiety disorders.</li>
+  <li><strong>Improve mood in a few minutes a day.</strong> A 2023 study found that five minutes a day of "cyclic sighing" (a long exhale after two inhales) improved mood and reduced physiological arousal (Balban et al., 2023).</li>
+  <li><strong>Support cardiovascular health.</strong> Slow breathing can lower blood pressure in the short term and is especially relevant for people with high blood pressure, alongside their treatment.</li>
+  <li><strong>Improve focus.</strong> Many athletes, students and professionals use breathing to settle before performing.</li>
+  <li><strong>Promote better sleep.</strong> Techniques such as the 4-7-8 method can calm the nervous system before bed.</li>
+</ul>
+<h3>Practical Breathing Techniques</h3>
+<ul>
+  <li><strong>Diaphragmatic breathing.</strong> Place one hand on your chest and the other on your abdomen. Inhale slowly through your nose, letting your abdomen rise while your chest stays still. Exhale slowly. Repeat for 5 to 10 minutes.</li>
+  <li><strong>4-7-8 breathing.</strong> Inhale through your nose for a count of 4, hold for 7, exhale through your mouth for 8. Particularly useful before sleep.</li>
+  <li><strong>Box breathing.</strong> Inhale for 4, hold for 4, exhale for 4, hold for 4. Repeat for several cycles. Often used by athletes and military personnel to regain focus.</li>
+  <li><strong>Alternate nostril breathing.</strong> Close your right nostril with your thumb and inhale through the left. Close the left nostril with your ring finger and exhale through the right. Then inhale through the right, close it, and exhale through the left. Continue alternating.</li>
+</ul>
+<p>In the next part of this book, we will explore the Russian Systema approach to breathing and relaxation, with its unique techniques and philosophy for achieving calm and resilience.</p>
+
+<!-- PART 2 -->
+<h2 class="part" id="part2"><span>Part 2</span>The Russian Systema Approach to Breathing and Relaxation</h2>
+
+<h2 class="chapter" id="ch4"><span>Chapter 4</span>Introduction to Systema: The Art of Natural Movement</h2>
+<p>Systema is often described as a Russian martial art of "combat and healing." It is a holistic practice that emphasizes natural movement, relaxation and breath control. Unlike many martial arts built on rigid techniques and fixed forms, Systema is fluid and adaptable, designed to work with the body's natural instincts and rhythms.</p>
+<h3>Origins and Philosophy</h3>
+<p>Systema draws on Russian martial traditions and on training developed for military and special-forces units, where a practical method was needed for high-stress, unpredictable situations. In its modern form it was taught and popularized from the 1990s onward, notably by Mikhail Ryabko and Vladimir Vasiliev, and it has since spread worldwide. Beyond self-defense, Systema is presented by its teachers as a way of life that integrates physical training, breathing, relaxation and awareness.</p>
+<p>At its core, Systema rests on four principles, often called the Four Pillars: <strong>breathing, relaxation, posture and movement</strong>. They are interconnected and form the foundation of every Systema practice. Its philosophy holds that true strength comes from harmony with oneself and one's environment: by cultivating awareness, adaptability and calm, practitioners learn to respond to challenges with ease and efficiency, in combat, in daily life or under stress.</p>
+<h3>The Four Pillars of Systema</h3>
+<ol>
+  <li><strong>Breathing.</strong> The cornerstone of Systema. Practitioners learn to breathe continuously and naturally, even under pressure. This supports physical performance, mental clarity and emotional stability.</li>
+  <li><strong>Relaxation.</strong> In Systema, relaxation is not the absence of tension but the ability to act without unnecessary strain. Relaxed muscles conserve energy, move more efficiently and are less prone to injury; relaxation also increases sensitivity and awareness.</li>
+  <li><strong>Posture.</strong> A natural, upright posture provides balance, stability and freedom of movement. Good posture also supports breathing and relaxation.</li>
+  <li><strong>Movement.</strong> Movement in Systema is fluid and natural, free from predetermined forms. Practitioners learn to move efficiently, to fall, roll and recover smoothly, and to act with power and precision when needed.</li>
+</ol>
+<h3>Systema as a Path to Well-Being</h3>
+<p>Although Systema originated in combat, its principles apply to everyday life. Its emphasis on breathing, relaxation, posture and movement makes it an effective tool for managing stress, supporting physical health and building emotional resilience.</p>
+<p>Systema is also rooted in self-awareness. Practitioners learn to listen to their bodies, to recognize tension and stress, and to release them through breath and movement. This awareness extends to emotions and reactions, making Systema not only a martial art but also a path to personal growth.</p>
+<h3>Systema Today</h3>
+<p>Today, Systema is practiced by people from all walks of life: martial artists, athletes, health professionals and people simply looking for stress relief. Its gentle, mindful approach to movement can suit people recovering from injury or living with chronic pain, provided it respects the body's limits and, where needed, medical advice. In high-stress professions such as law enforcement, the military and emergency response, its focus on breathing and relaxation helps people stay calm and make better decisions under pressure.</p>
+
+<h2 class="chapter" id="ch5"><span>Chapter 5</span>Systema Breathing Techniques</h2>
+<p>Breathing is the foundation of Systema, the bridge between body, mind and emotions. It is not only a physiological process but a tool for cultivating calm, focus and resilience. This chapter explores nasal and diaphragmatic breathing, presents key Systema techniques and explains how they reduce tension and improve focus.</p>
+<h3>Nasal and Diaphragmatic Breathing</h3>
+<ol>
+  <li><strong>Nasal breathing.</strong> Breathing through the nose is a basic principle in Systema. The nose filters, warms and humidifies the air. Nasal breathing also increases the production of nitric oxide in the sinuses, which contributes to efficient oxygen uptake, and it naturally encourages slower, deeper breaths.</li>
+  <li><strong>Diaphragmatic breathing.</strong> Also called belly breathing, it engages the diaphragm, the dome-shaped muscle below the lungs. It allows fuller breaths, reduces the workload on the chest and shoulders and promotes relaxation.</li>
+</ol>
+<h3>Three Key Techniques</h3>
+<ol>
+  <li><strong>Continuous breathing.</strong> Maintaining a steady, uninterrupted flow of breath, even during movement or effort. This keeps the body oxygenated and relaxed and prevents tension and fatigue from building up. Focus on smooth, even breaths through the nose, without pauses or strain.</li>
+  <li><strong>Wave breathing.</strong> Synchronizing the breath with movement. For example, inhale as you prepare or gather yourself, and exhale as you perform the movement. This improves coordination and efficiency while promoting relaxation and focus.</li>
+  <li><strong>Breath holds.</strong> Brief pauses at the top of an inhalation or at the bottom of an exhalation, used to build calm and control. Take a comfortable breath, hold it for a few seconds, then exhale slowly. Increase the duration only gradually, and never to the point of strain (see "Safety First" at the end of this book).</li>
+</ol>
+<div class="box">
+  <span class="new">New in the 2nd edition</span>
+  <h4>Three classic Systema drills</h4>
+  <p><strong>1. Walking breath ladder.</strong> Walk at a normal pace. Inhale through the nose for one step and exhale through the mouth for one step. Then inhale for two steps and exhale for two, then three and three, up to a comfortable maximum (for example 8), and come back down to one. If you run out of breath, simply return to a lower step.</p>
+  <p><strong>2. Burst breathing.</strong> After an effort, or when you feel pain or a surge of tension, breathe with short, quick bursts: brief sniffs in through the nose and short puffs out through slightly pursed lips, as if blowing out a candle. Continue until your breathing and heart rate settle, then return to slow nasal breathing.</p>
+  <p><strong>3. Breath-led movement.</strong> Choose a simple movement, such as a slow squat. Let the breath lead: start the inhale, then begin to move down; start the exhale, then rise. Keep the movement slow enough that the breath is never forced. The goal is not strength but staying relaxed while moving.</p>
+</div>
+<h3>How Systema Breathing Reduces Tension and Improves Focus</h3>
+<ul>
+  <li><strong>It reduces tension.</strong> Slow, deep breathing releases physical and mental tension and keeps the body relaxed, even during exertion.</li>
+  <li><strong>It improves focus.</strong> The rhythm of the breath creates a meditative state that anchors the mind in the present and cuts through distracting thoughts.</li>
+  <li><strong>It builds resilience.</strong> Regular practice trains body and mind to stay calm and composed under challenging conditions, with benefits that extend to emotional regulation and well-being.</li>
+</ul>
+
+<h2 class="chapter" id="ch6"><span>Chapter 6</span>Systema Relaxation Practices</h2>
+<p>Relaxation is a core principle of Systema, reflecting the belief that true strength comes from staying calm and adaptable in the face of challenges. Systema relaxation practices release physical tension, cultivate awareness and promote a deep sense of inner peace.</p>
+<h3>Progressive Muscle Relaxation</h3>
+<p>Progressive muscle relaxation (PMR) systematically releases tension from the body. In Systema, it is often combined with breathing:</p>
+<ol>
+  <li>Sit or lie down comfortably and take a few slow breaths.</li>
+  <li>Starting with your feet, tense the muscles gently for 5 to 10 seconds, then release completely.</li>
+  <li>Move upward through the body: calves, thighs, abdomen, chest, arms, hands, neck and face.</li>
+  <li>As you release each group, notice the sensation of relaxation and let go of any remaining tension.</li>
+</ol>
+<p>PMR increases body awareness, making it easier to recognize and release tension before it becomes chronic. Avoid tensing any area that is injured or painful.</p>
+<h3>Mindfulness and Awareness in Systema</h3>
+<p>Mindfulness means paying attention to the present moment without judgment; awareness is the ability to perceive one's inner and outer environment. Systema cultivates both through:</p>
+<ul>
+  <li><strong>Body scanning:</strong> mentally scanning the body from head to toe, noticing areas of tension and releasing them.</li>
+  <li><strong>Sensory awareness:</strong> tuning into sounds, smells, textures and visual cues to sharpen attention.</li>
+  <li><strong>Emotional awareness:</strong> observing emotions without judgment, to respond with calm and clarity rather than react impulsively.</li>
+</ul>
+<h3>Practical Exercises for Daily Life</h3>
+<ul>
+  <li><strong>Morning routine:</strong> 5 to 10 minutes of diaphragmatic breathing and progressive muscle relaxation to set a calm, focused tone for the day.</li>
+  <li><strong>Breathing breaks:</strong> a few minutes of continuous or wave breathing during the day to reduce stress and restore focus.</li>
+  <li><strong>Evening wind-down:</strong> a body scan or gentle stretching with slow breaths, to release tension and prepare for sleep.</li>
+  <li><strong>Movement with awareness:</strong> paying attention to breath, posture and movement while walking, cooking or cleaning.</li>
+</ul>
+<p>Systema is more than a martial art: it is a way of living with awareness, resilience and ease. In the next part, we will see how to combine its practices with the Relaxation Response for a holistic approach to well-being.</p>
+
+<!-- PART 3 -->
+<h2 class="part" id="part3"><span>Part 3</span>Integrating the Relaxation Response and Systema for Well-Being</h2>
+
+<h2 class="chapter" id="ch7"><span>Chapter 7</span>Self-Control and Emotional Regulation</h2>
+<p>In today's fast-paced world, emotional resilience is a critical skill. The ability to regulate emotions, manage stress and keep self-control has a real impact on mental and physical health. By combining the Relaxation Response with Systema's breathing and relaxation techniques, you can build powerful tools for emotional resilience.</p>
+<h3>How These Practices Build Emotional Resilience</h3>
+<ol>
+  <li><strong>They engage the parasympathetic nervous system.</strong> Both approaches slow the heart, lower arousal and create a physiological state that supports emotional stability.</li>
+  <li><strong>They break the stress-emotion cycle.</strong> Chronic stress heightens emotional reactivity. Present-moment awareness lets you observe emotions without being overwhelmed by them.</li>
+  <li><strong>They build emotional awareness.</strong> Systema's attention to the body helps you recognize the early physical signs of stress, so that you can use your breath before emotions escalate.</li>
+  <li><strong>They strengthen self-control.</strong> Regular repetition, combined with continuous breathing and relaxation, trains the mind to stay calm and focused under pressure.</li>
+</ol>
+<h3>Illustrative Examples: Anger, Anxiety and Fear</h3>
+<p><em>The following examples are composites created to illustrate how these practices can be used. They are not reports of real patients.</em></p>
+<h4>Example 1: Managing anger</h4>
+<p><strong>Situation.</strong> John, 35, has frequent outbursts of anger at work and at home, which are damaging his relationships.<br><strong>Practice.</strong> He practices the Relaxation Response every morning with a simple word, and uses continuous breathing in tense situations.<br><strong>What changes.</strong> Over time he learns to notice the early signs of anger, such as a racing heart and tight muscles, and to calm himself with his breath before his emotions escalate.</p>
+<h4>Example 2: Reducing anxiety</h4>
+<p><strong>Situation.</strong> Maria, 28, a graduate student, lives with persistent worry that disturbs her studies and her sleep.<br><strong>Practice.</strong> She practices diaphragmatic and wave breathing for 10 to 15 minutes a day, silently repeating the word "calm."<br><strong>What changes.</strong> After a few weeks she feels less overwhelmed, uses wave breathing to stay focused during exams, and sleeps better.</p>
+<h4>Example 3: Overcoming fear</h4>
+<p><strong>Situation.</strong> David, 42, a firefighter, experiences panic during high-stress interventions.<br><strong>Practice.</strong> He trains Systema breathing, with continuous breathing and short, controlled breath holds during training, and practices the Relaxation Response off duty.<br><strong>What changes.</strong> He feels more composed during emergencies and makes clearer decisions under pressure.</p>
+<h3>Practical Strategies for Emotional Regulation</h3>
+<ul>
+  <li><strong>Daily practice:</strong> 10 to 20 minutes of the Relaxation Response or Systema breathing each day.</li>
+  <li><strong>Breathing anchors:</strong> use continuous or wave breathing as an anchor in stressful moments.</li>
+  <li><strong>Mindful pauses:</strong> short check-ins with your body during the day, with a few diaphragmatic breaths.</li>
+  <li><strong>Emotion journaling:</strong> after practicing, note your emotional state to identify patterns and triggers.</li>
+  <li><strong>Progressive muscle relaxation:</strong> combine it with the Relaxation Response to release physical tension.</li>
+</ul>
+<div class="box warning">
+  <h4>When to seek help</h4>
+  <p>Breathing practices can support emotional well-being, but they do not replace professional care. If anger, anxiety, fear or low mood are intense, persistent or affect your daily life, talk to a doctor or a mental health professional.</p>
+</div>
+
+<h2 class="chapter" id="ch8"><span>Chapter 8</span>Supporting People Living with Chronic Diseases</h2>
+<p>Chronic diseases such as inflammatory bowel disease (IBD), fibromyalgia and cardiovascular disease are often aggravated by stress. Stress worsens symptoms, and symptoms in turn increase stress. Used alongside medical treatment, the Relaxation Response and Systema breathing can help people improve their quality of life.</p>
+<h3>The Role of Stress in Chronic Diseases</h3>
+<ol>
+  <li><strong>Inflammatory bowel disease.</strong> Stress is a recognized trigger of flare-ups in Crohn's disease and ulcerative colitis, and can worsen abdominal pain and fatigue.</li>
+  <li><strong>Fibromyalgia.</strong> Stress can increase muscle tension, disturb sleep and amplify the perception of pain.</li>
+  <li><strong>Cardiovascular disease.</strong> Chronic stress contributes to high blood pressure and encourages unhealthy habits, both risk factors for heart attack and stroke.</li>
+  <li><strong>Autoimmune disorders.</strong> Conditions such as rheumatoid arthritis and lupus can be influenced by stress.</li>
+</ol>
+<h3>How These Practices Can Complement Medical Treatment</h3>
+<ul>
+  <li><strong>Reducing stress-related symptoms</strong> by engaging the parasympathetic nervous system.</li>
+  <li><strong>Helping with pain</strong> by reducing muscle tension and changing the way pain is perceived.</li>
+  <li><strong>Supporting emotional well-being</strong>, since living with a chronic disease weighs on mental health.</li>
+  <li><strong>Improving sleep</strong>, which plays a central role in recovery.</li>
+</ul>
+<h3>Practical Tips</h3>
+<h4>Breathing exercises</h4>
+<ul>
+  <li><strong>Diaphragmatic breathing:</strong> sit or lie down, one hand on the chest and one on the belly; inhale slowly through the nose, letting the belly rise; exhale slowly and let it fall. 5 to 10 minutes a day.</li>
+  <li><strong>4-7-8 breathing:</strong> inhale for 4, hold for 7, exhale for 8, to calm the nervous system.</li>
+  <li><strong>Wave breathing:</strong> synchronize your breath with gentle movements such as stretching or walking.</li>
+</ul>
+<h4>Relaxation routines</h4>
+<ul>
+  <li><strong>Progressive muscle relaxation:</strong> tense and release each muscle group, from the feet upward.</li>
+  <li><strong>Guided imagery:</strong> visualize a peaceful scene, such as a beach or a forest, while breathing slowly.</li>
+</ul>
+<h4>Lifestyle</h4>
+<ul>
+  <li><strong>Mindful movement:</strong> gentle activity such as yoga, tai chi or walking, adapted to your condition.</li>
+  <li><strong>Stress-reducing habits:</strong> prioritize sleep, eat a balanced diet and make time for activities you enjoy.</li>
+  <li><strong>Social support:</strong> stay connected with family, friends or patient groups.</li>
+</ul>
+<div class="box warning">
+  <h4>Important</h4>
+  <p>Never stop or change a treatment without your doctor's advice. Tell your care team about the practices you use, especially if you have a heart or lung condition.</p>
+</div>
+
+<h2 class="chapter" id="ch9"><span>Chapter 9</span>Daily Practices for a Calmer Life</h2>
+<p>Bringing the Relaxation Response and Systema into your daily routine can change the way you experience stress. This chapter offers a simple step-by-step approach.</p>
+<h3>Getting Started</h3>
+<ul>
+  <li><strong>Start small:</strong> 5 to 10 minutes a day, then increase gradually.</li>
+  <li><strong>Set a routine:</strong> choose fixed times, such as morning and evening.</li>
+  <li><strong>Create a calm environment:</strong> a quiet, comfortable place without distractions.</li>
+  <li><strong>Combine techniques:</strong> breathing, relaxation and mindfulness in one short routine.</li>
+</ul>
+<h3>Morning Ritual</h3>
+<ul>
+  <li><strong>Wake up gently:</strong> take a few moments to stretch and breathe deeply before getting up.</li>
+  <li><strong>Diaphragmatic breathing:</strong> 5 to 10 minutes to set a calm tone for the day.</li>
+  <li><strong>Mindful movement:</strong> gentle stretching or yoga.</li>
+  <li><strong>Set intentions:</strong> think about your day and picture yourself staying calm and focused.</li>
+</ul>
+<h3>Evening Ritual</h3>
+<ul>
+  <li><strong>Unwind with breathing:</strong> 4-7-8 or wave breathing to release the day's stress.</li>
+  <li><strong>Progressive muscle relaxation</strong> to prepare the body for sleep.</li>
+  <li><strong>Gratitude:</strong> think of three things you are grateful for.</li>
+  <li><strong>Guided imagery:</strong> picture a peaceful scene as you fall asleep.</li>
+</ul>
+<h3>Adapting the Practices to Your Life</h3>
+<table>
+  <tr><th>If you are…</th><th>Try this</th></tr>
+  <tr><td>A busy professional</td><td>1 to 2 minutes of diaphragmatic breathing at your desk; wave breathing while walking between meetings.</td></tr>
+  <tr><td>A parent</td><td>Mindful breathing while your child naps or plays; simple breathing games with children.</td></tr>
+  <tr><td>A senior</td><td>Gentle movements and breathing adapted to your mobility; guided imagery or PMR for relaxation and pain.</td></tr>
+  <tr><td>A student</td><td>4-7-8 breathing before exams or presentations; a few minutes of Systema breathing during study breaks.</td></tr>
+</table>
+
+<!-- PART 4 -->
+<h2 class="part" id="part4"><span>Part 4</span>Advanced Applications and Future Directions</h2>
+
+<h2 class="chapter" id="ch10"><span>Chapter 10</span>High-Stress Environments</h2>
+<p>Athletes, first responders and military personnel face situations that demand peak physical and mental performance. The ability to manage stress, recover quickly and stay focused can make the difference between success and failure, and sometimes between life and death.</p>
+<h3>Athletes</h3>
+<ul>
+  <li><strong>Performance:</strong> wave breathing and controlled breathing help athletes stay calm and focused under pressure; the Relaxation Response can reduce pre-competition anxiety.</li>
+  <li><strong>Recovery:</strong> after intense effort, diaphragmatic breathing and progressive muscle relaxation help the body shift into recovery mode and support restful sleep.</li>
+</ul>
+<h3>First Responders</h3>
+<ul>
+  <li><strong>Stress management:</strong> continuous breathing and relaxation help first responders stay calm and make better decisions in critical moments.</li>
+  <li><strong>Emotional resilience:</strong> regular relaxation practice can support emotional regulation and help prevent burnout, alongside professional support after traumatic events.</li>
+</ul>
+<h3>Military Personnel</h3>
+<ul>
+  <li><strong>Readiness:</strong> Systema's roots in Russian military training make it well suited to soldiers. Controlled breathing supports endurance, focus and composure.</li>
+  <li><strong>Post-traumatic stress:</strong> breathing and relaxation techniques are used as complements within professional treatment programs, to help manage anxiety, hypervigilance and insomnia.</li>
+</ul>
+<h3>Performance and Recovery Through Breathing</h3>
+<ul>
+  <li><strong>Efficient breathing</strong> supports sustained effort in physically demanding tasks.</li>
+  <li><strong>Less mental fatigue:</strong> short relaxation breaks clear the mind during long periods of stress.</li>
+  <li><strong>Faster recovery:</strong> engaging the parasympathetic system after effort supports physical and mental recovery.</li>
+</ul>
+
+<h2 class="chapter" id="ch11"><span>Chapter 11</span>The Future of Mind-Body Medicine</h2>
+<p>The mind-body connection is increasingly recognized in medicine. As research continues, breathing and relaxation practices are finding a growing place alongside conventional care.</p>
+<h3>The Relaxation Response in Mainstream Medicine</h3>
+<ul>
+  <li><strong>Integration into care:</strong> hospitals and clinics offer relaxation-based programs for conditions such as high blood pressure, chronic pain and anxiety. Programs such as MBSR and mindfulness-based cognitive therapy (MBCT) are now common.</li>
+  <li><strong>Prevention:</strong> managing stress early is increasingly seen as part of preventing stress-related illness.</li>
+  <li><strong>Patient empowerment:</strong> learning to elicit the Relaxation Response lets patients take an active role in their health, in partnership with their care team.</li>
+</ul>
+<h3>Breathing Practices and Global Health</h3>
+<ul>
+  <li><strong>Accessible and affordable:</strong> breathing practices are free, non-invasive and available to people of all ages and backgrounds, which makes them valuable in low-resource settings.</li>
+  <li><strong>Stress in difficult contexts:</strong> where economic hardship, instability or disasters create chronic stress, simple breathing techniques can support well-being.</li>
+  <li><strong>Community programs:</strong> training local leaders to teach these techniques can spread their benefits widely.</li>
+</ul>
+<h3>Technology</h3>
+<ul>
+  <li><strong>Apps and online platforms</strong> offer guided sessions, reminders and progress tracking.</li>
+  <li><strong>Wearables</strong> such as heart-rate monitors and biofeedback devices make the effects of practice visible, for example through heart rate variability.</li>
+  <li><strong>Virtual reality</strong> creates immersive relaxation experiences such as virtual nature walks.</li>
+</ul>
+<h3>Challenges and Opportunities</h3>
+<ul>
+  <li><strong>Research:</strong> the short-term effects of slow breathing are well documented; larger and longer studies are still needed to establish long-term effects on disease.</li>
+  <li><strong>Cultural adaptation:</strong> practices should be adapted to local cultures and traditions to be accessible and relevant.</li>
+  <li><strong>Working with conventional medicine:</strong> collaboration between health professionals, researchers and teachers is key.</li>
+</ul>
+
+<!-- Conclusion -->
+<h2 class="chapter" id="conclusion"><span>Conclusion</span>The Power of the Relaxation Response and Systema to Transform Lives</h2>
+<p>Throughout this book, we have explored the impact of the Relaxation Response and Systema breathing on physical, mental and emotional well-being: from the physiology of stress to high-stress professions and life with a chronic disease. By engaging the parasympathetic nervous system and reducing stress, these practices help us take an active part in our health and meet life's challenges with resilience.</p>
+<ol>
+  <li><strong>Stress reduction:</strong> a natural, accessible way to counteract the effects of chronic stress.</li>
+  <li><strong>Emotional resilience:</strong> awareness and self-regulation to manage anxiety and build inner strength.</li>
+  <li><strong>Physical health:</strong> support for blood pressure, sleep and recovery, alongside medical care.</li>
+  <li><strong>Performance and recovery:</strong> focus under pressure and faster recovery for athletes, first responders and soldiers.</li>
+  <li><strong>Global reach:</strong> simple, free practices that can benefit very diverse populations.</li>
+</ol>
+<h3>A Call to Action</h3>
+<p>The journey toward a healthier, calmer and more fulfilling life begins with a single breath. Here is how to take the first step:</p>
+<ul>
+  <li><strong>Start small:</strong> 5 to 10 minutes of diaphragmatic breathing or a simple relaxation exercise each day.</li>
+  <li><strong>Create a routine:</strong> morning and evening rituals, mindful breaks, moments of reflection.</li>
+  <li><strong>Explore and adapt:</strong> try wave breathing, progressive muscle relaxation or guided imagery and keep what works for you.</li>
+  <li><strong>Share the journey:</strong> invite friends, family or colleagues to practice with you.</li>
+  <li><strong>Seek guidance:</strong> a qualified instructor or a good app can help you progress.</li>
+</ul>
+<h3>A Vision for the Future</h3>
+<p>The integration of these practices into medicine, education and community health holds great promise: a world where people are empowered to care for their health, where stress is managed early, and where well-being is a priority for all. The power to transform your life lies within you. It begins with a breath, a moment of stillness, and a commitment to nurturing your body, mind and spirit. The journey starts now.</p>
+
+<!-- 7-day plan -->
+<h2 class="chapter" id="plan"><span>New in the 2nd edition</span>Your 7-Day Starter Plan</h2>
+<p>Ten to fifteen minutes a day are enough to begin. Tick each day when it is done: consistency matters more than duration.</p>
+<table>
+  <tr><th>Day</th><th>Morning (5–10 min)</th><th>During the day</th><th>Evening (5 min)</th></tr>
+  <tr><td>1</td><td>Diaphragmatic breathing, 5 min</td><td>3 slow breaths before each meal</td><td>4-7-8 breathing, 4 cycles</td></tr>
+  <tr><td>2</td><td>Diaphragmatic breathing, 7 min</td><td>Continuous breathing while walking</td><td>Body scan</td></tr>
+  <tr><td>3</td><td>Relaxation Response with a word, 10 min</td><td>1 minute of box breathing before a task</td><td>4-7-8 breathing</td></tr>
+  <tr><td>4</td><td>Walking breath ladder, up to 6 steps</td><td>Mindful pause: notice and release tension</td><td>Progressive muscle relaxation</td></tr>
+  <tr><td>5</td><td>Relaxation Response, 10 min</td><td>Wave breathing during a simple effort (stairs, carrying)</td><td>Gratitude: 3 things</td></tr>
+  <tr><td>6</td><td>Breath-led squats, 2 × 5 slow repetitions</td><td>Burst breathing after an effort</td><td>Guided imagery with slow breathing</td></tr>
+  <tr><td>7</td><td>Your favorite practice, 10–15 min</td><td>Note which moments you needed your breath most</td><td>Plan your practice for next week</td></tr>
+</table>
+<p>After a week, keep what worked best for you and practice it daily. Many people notice the difference within two to four weeks of regular practice.</p>
+
+<!-- Safety -->
+<h2 class="chapter" id="safety"><span>New in the 2nd edition</span>Safety First</h2>
+<ul>
+  <li><strong>Never force the breath.</strong> Breathing practice should feel comfortable. Stop if you feel dizzy, lightheaded, tingling, pain or anxiety, and return to normal breathing.</li>
+  <li><strong>Breath holds:</strong> keep them short and comfortable. Avoid them if you are pregnant or have a heart condition, high blood pressure, epilepsy or a history of fainting, unless your doctor agrees.</li>
+  <li><strong>Never practice breath holds in or near water</strong>, while driving, or in any situation where losing concentration could be dangerous.</li>
+  <li><strong>Movement drills:</strong> adapt them to your mobility. Skip any movement that hurts or that your doctor has advised against.</li>
+  <li><strong>Mental health:</strong> for some people, focusing on the breath can bring up difficult emotions. If this happens, open your eyes, look around you and breathe normally. Seek professional support if needed.</li>
+  <li><strong>Medical treatment:</strong> these practices complement medical care; they never replace it.</li>
+</ul>
+
+<!-- References -->
+<h2 class="chapter" id="references"><span>New in the 2nd edition</span>References and Further Reading</h2>
+<ol class="refs">
+  <li>Benson, H., Beary, J. F., &amp; Carol, M. P. (1974). The relaxation response. <em>Psychiatry</em>, 37(1), 37–46.</li>
+  <li>Benson, H., &amp; Klipper, M. Z. (1975). <em>The Relaxation Response</em>. New York: William Morrow.</li>
+  <li>Russo, M. A., Santarelli, D. M., &amp; O'Rourke, D. (2017). The physiological effects of slow breathing in the healthy human. <em>Breathe</em>, 13(4), 298–309.</li>
+  <li>Zaccaro, A., Piarulli, A., Laurino, M., et al. (2018). How breath-control can change your life: a systematic review on psycho-physiological correlates of slow breathing. <em>Frontiers in Human Neuroscience</em>, 12, 353.</li>
+  <li>Ma, X., Yue, Z.-Q., Gong, Z.-Q., et al. (2017). The effect of diaphragmatic breathing on attention, negative affect and stress in healthy adults. <em>Frontiers in Psychology</em>, 8, 874.</li>
+  <li>Balban, M. Y., Neri, E., Kogon, M. M., et al. (2023). Brief structured respiration practices enhance mood and reduce physiological arousal. <em>Cell Reports Medicine</em>, 4(1), 100895.</li>
+  <li>Vasiliev, V. (2006). <em>Let Every Breath: Secrets of the Russian Breath Masters</em>. Russian Martial Art.</li>
+</ol>
+
+<!-- Author -->
+<h2 class="chapter" id="author"><span>About the Author</span>Mohamed Hassan Bouazzaoui</h2>
+<!-- Author: personalize this paragraph (background, how you discovered Systema, what you want readers to take away). -->
+<p>Mohamed Hassan Bouazzaoui wrote this book to share simple, science-informed tools that anyone can use to breathe better, manage stress and live more calmly. It brings together the research on the Relaxation Response and the practical wisdom of Systema.</p>
+<div class="box">
+  <h4>Continue the practice</h4>
+  <p>Guided exercises, updates and the other language editions of this book are available on the book's website. Questions and feedback are always welcome through the contact page.</p>
+</div>
+
+</body>
+</html>

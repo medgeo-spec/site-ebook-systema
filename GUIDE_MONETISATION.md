@@ -1,5 +1,22 @@
 # Site e-book « Breathe & Relax » : gagner de l'argent avec le livre (pas à pas)
 
+## Nouveau : 2ᵉ édition du livre et liste e-mail
+- **Livre** : `ebook/Breathing-And-Relaxation-2nd-Edition-EN.pdf` remplace l'ancien PDF (coquilles OCR corrigées,
+  structure en 11 chapitres, avertissement santé, sécurité, références, 3 exercices Systema, programme de 7 jours).
+  Source modifiable : `ebook/source/book-en.html` (voir `ebook/source/README.md`).
+  👉 **À relire par l'auteur** : les passages marqués « New in the 2nd edition » et le paragraphe « About the Author ».
+- **Liste e-mail** : un formulaire « Restez informé » est sur la page « Le livre » (4 langues), avec consentement.
+  Les inscriptions arrivent dans Netlify → Forms → `newsletter` ; exportez-les (CSV) vers **Brevo** ou
+  **MailerLite** pour envoyer vos nouvelles. C'est votre audience : utile que le livre reste gratuit ou devienne payant.
+- **Pages Confidentialité** ajoutées (obligatoires dès qu'on collecte des e-mails), lien dans chaque pied de page.
+
+## Amazon Kindle (KDP), la visibilité sans audience
+1. https://kdp.amazon.com : compte (identité, coordonnées bancaires pour les versements, formulaire fiscal)
+2. Kindle préfère un fichier **EPUB ou DOCX** au PDF : demandez-moi la conversion de `book-en.html` en EPUB
+3. Prix conseillé : 2,99 à 4,99 $ (redevance de 70 % dans cette fourchette)
+4. Couverture : 1 600 × 2 560 px minimum. La couverture actuelle (512 × 800) est trop petite : à refaire
+   en haute définition (Canva suffit)
+
 Aujourd'hui, le PDF est **offert** : le bouton « Download PDF » de `book.html` le télécharge directement.
 Deux stratégies possibles. Choisissez-en une (dites-moi laquelle, je fais les modifications dans les 4 langues).
 
