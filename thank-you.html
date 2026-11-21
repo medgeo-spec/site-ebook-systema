@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Thank you | Breathe & Relax</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .thanks { max-width: 640px; margin: 64px auto; padding: 0 16px; text-align: center; }
+        .thanks .buy-buttons { justify-content: center; margin: 28px 0; }
+        .thanks .note { color: #5b6b73; font-size: 0.95rem; }
+        .thanks .error { color: #b42318; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <h1><a href="index.html">Breathe & Relax</a></h1>
+        </div>
+    </header>
+
+    <main class="thanks">
+        <h2 id="title"></h2>
+        <p id="intro"></p>
+        <div class="buy-buttons">
+            <a id="pdf" class="button button-download">PDF</a>
+            <a id="epub" class="button button-download button-secondary">EPUB</a>
+        </div>
+        <p class="note" id="help"></p>
+        <p><a id="back" href="index.html"></a></p>
+    </main>
+
+    <script>
+        (function () {
+            var TEXT = {
+                en: {
+                    title: 'Thank you for your purchase!',
+                    intro: 'Your copy of Breathing and Relaxation is ready. Download it in the format you prefer:',
+                    pdf: 'Download the PDF',
+                    epub: 'Download the EPUB (Kindle, Apple Books, e-readers)',
+                    help: 'Paddle, our reseller, has e-mailed you the receipt. Keep this page’s address to download the book again later.',
+                    back: 'Back to the website',
+                    missing: 'This page needs the link received right after payment. If you bought the book and lost it, write to us from the Contact page with your receipt.'
+                },
+                fr: {
+                    title: 'Merci pour votre achat !',
+                    intro: 'Votre exemplaire de Breathing and Relaxation est prêt. Téléchargez-le dans le format de votre choix :',
+                    pdf: 'Télécharger le PDF',
+                    epub: 'Télécharger l’EPUB (Kindle, Apple Books, liseuses)',
+                    help: 'Paddle, notre revendeur, vous a envoyé le reçu par e-mail. Gardez l’adresse de cette page pour retélécharger le livre plus tard.',
+                    back: 'Retour au site',
+                    missing: 'Cette page a besoin du lien obtenu juste après le paiement. Si vous avez acheté le livre et l’avez perdu, écrivez-nous depuis la page Contact avec votre reçu.'
+                },
+                es: {
+                    title: '¡Gracias por su compra!',
+                    intro: 'Su ejemplar de Breathing and Relaxation está listo. Descárguelo en el formato que prefiera:',
+                    pdf: 'Descargar el PDF',
+                    epub: 'Descargar el EPUB (Kindle, Apple Books, lectores)',
+                    help: 'Paddle, nuestro revendedor, le ha enviado el recibo por correo. Guarde la dirección de esta página para volver a descargar el libro.',
+                    back: 'Volver al sitio',
+                    missing: 'Esta página necesita el enlace recibido justo después del pago. Si compró el libro y lo perdió, escríbanos desde la página de Contacto con su recibo.'
+                },
+                ar: {
+                    title: 'شكرًا على شرائك!',
+                    intro: 'نسختك من كتاب Breathing and Relaxation جاهزة. حمّلها بالصيغة التي تفضلها:',
+                    pdf: 'تحميل PDF',
+                    epub: 'تحميل EPUB (كيندل، Apple Books، أجهزة القراءة)',
+                    help: 'أرسل إليك Paddle، موزّعنا، الإيصال عبر البريد. احتفظ بعنوان هذه الصفحة لتحميل الكتاب مجددًا لاحقًا.',
+                    back: 'العودة إلى الموقع',
+                    missing: 'تحتاج هذه الصفحة إلى الرابط الذي تحصل عليه بعد الدفع. إذا فقدته، راسلنا من صفحة التواصل مع إيصالك.'
+                }
+            };
+            var params = new URLSearchParams(window.location.search);
+            var lang = TEXT[params.get('lang')] ? params.get('lang') : 'en';
+            var t = TEXT[lang];
+            var txn = params.get('txn') || '';
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.getElementById('title').textContent = t.title;
+            document.getElementById('help').textContent = t.help;
+            var back = document.getElementById('back');
+            back.textContent = t.back;
+            back.href = lang === 'en' ? 'index.html' : lang + '/index.html';
+
+            if (!/^txn_[a-z0-9]{20,40}$/.test(txn)) {
+                var intro = document.getElementById('intro');
+                intro.textContent = t.missing;
+                intro.className = 'error';
+                document.querySelector('.buy-buttons').hidden = true;
+                document.getElementById('help').hidden = true;
+                return;
+            }
+            document.getElementById('intro').textContent = t.intro;
+            var pdf = document.getElementById('pdf');
+            var epub = document.getElementById('epub');
+            pdf.textContent = t.pdf;
+            epub.textContent = t.epub;
+            pdf.href = '/api/ebook-download?format=pdf&txn=' + encodeURIComponent(txn);
+            epub.href = '/api/ebook-download?format=epub&txn=' + encodeURIComponent(txn);
+        })();
+    </script>
+</body>
+</html>

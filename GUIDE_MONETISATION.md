@@ -4,7 +4,7 @@ Stratégie retenue :
 | Canal | Rôle | Ce que vous touchez |
 |---|---|---|
 | **Amazon Kindle (KDP)** | Visibilité : Amazon amène des lecteurs qui ne vous connaissent pas | 70 % du prix (hors frais de livraison numérique, quelques centimes) |
-| **Votre site** (achat direct via Lemon Squeezy) | Meilleure marge, lecteurs fidèles, liste e-mail | ≈ 95 % du prix moins 0,50 $ |
+| **Votre site** (achat direct via Paddle) | Meilleure marge, lecteurs fidèles, liste e-mail | ≈ 95 % du prix moins 0,50 $ |
 | **YARAM** | Le livre est offert aux abonnés Premium : il fait vendre l'abonnement | Revenus d'abonnement |
 | **Extrait gratuit** (site) | Donne envie d'acheter, alimente la liste e-mail | – |
 
@@ -51,23 +51,39 @@ dans `YARAM/private/ebook/`.
    (Amazon ajuste les autres devises)
 7. **Publish** : le livre est en ligne sous 72 h. Copier le lien de la page du livre (`amazon.com/dp/...`)
 
-## Étape 2 : Vente directe sur votre site (Lemon Squeezy, 20 min)
-1. https://app.lemonsqueezy.com (même compte que pour WeightMyMeal et YARAM si déjà créé)
-2. **Products → New product** → « Breathing and Relaxation (e-book) » → **Single payment** → prix **4,99 $**
-   (même prix qu'Amazon : Amazon peut s'aligner sur un prix plus bas trouvé ailleurs, ce qui réduit votre redevance)
-3. Onglet **Files** : ajouter le **PDF** et l'**EPUB** : l'acheteur les reçoit automatiquement par e-mail
-4. Copier le lien d'achat (bouton **Share**)
+## Étape 2 : Vente directe sur votre site (Paddle)
+Lemon Squeezy n'accepte plus de nouveaux vendeurs : la vente directe passe par **Paddle**, le même compte que
+WeightMyMeal et YARAM. Paddle encaisse et gère la TVA, mais **ne livre pas de fichiers** : c'est le site qui
+s'en charge, ainsi :
+1. Le bouton « Acheter l'e-book » ouvre la fenêtre de paiement Paddle (4,99 $, TVA incluse) sur la page du livre.
+2. Après le paiement, l'acheteur arrive sur `thank-you.html` (dans sa langue), avec deux boutons : **PDF** et **EPUB**.
+3. Chaque téléchargement passe par la fonction Netlify `netlify/functions/ebook-download.mjs`, qui vérifie auprès
+   de Paddle que la commande est **payée** et concerne **le livre** avant d'envoyer le fichier. Le livre reste dans
+   `private/ebook/`, jamais publié. L'adresse de la page de remerciement permet de retélécharger plus tard.
 
-## Étape 3 : Brancher les boutons du site (2 min)
-Ouvrir `js/store-links.js` et coller les deux liens :
+**Mise en place (déjà faite sur le compte de test) :**
+1. Créer `.env` à la racine du site (il n'est jamais envoyé sur GitHub) avec `PADDLE_API_KEY` et `PADDLE_CLIENT_TOKEN`.
+2. Lancer `node scripts/paddle-setup.mjs` : il crée le produit et le prix 4,99 $ dans Paddle, remplit
+   `js/store-links.js` et écrit `PADDLE_EBOOK_PRICE` dans `.env`.
+3. Dans **Netlify → Site configuration → Environment variables**, ajouter `PADDLE_API_KEY` et `PADDLE_EBOOK_PRICE`
+   (pour la fonction de téléchargement).
+
+**Pour le compte réel** : faire valider le compte Paddle (il demandera une preuve que vous êtes l'auteur : gardez
+`private/ebook/source/`), créer les clés réelles, refaire les étapes 1 à 3, et demander à Paddle d'approuver la
+catégorie fiscale **« ebooks »** (TVA réduite sur les livres numériques dans plusieurs pays ; sans approbation le
+produit est en catégorie « standard »). Même prix qu'Amazon : Amazon peut s'aligner sur un prix plus bas trouvé
+ailleurs, ce qui réduit votre redevance.
+
+## Étape 3 : Brancher le bouton Amazon (2 min)
+Ouvrir `js/store-links.js` et coller le lien Amazon :
 ```js
 window.STORE_LINKS = {
   amazon: 'https://www.amazon.com/dp/XXXXXXXXXX',
-  direct: 'https://votreboutique.lemonsqueezy.com/buy/xxxx',
+  paddle: { ... },  // rempli par scripts/paddle-setup.mjs
 };
 ```
-Les boutons « Acheter sur Amazon Kindle » et « Acheter l'e-book » apparaissent aussitôt dans les 4 langues ;
-tant qu'un lien est vide, son bouton reste caché et le site affiche « bientôt disponible » + l'extrait gratuit.
+Les boutons « Acheter sur Amazon Kindle » et « Acheter l'e-book » apparaissent dans les 4 langues ;
+tant qu'un canal n'est pas configuré, son bouton reste caché et le site affiche « bientôt disponible » + l'extrait gratuit.
 
 ## Étape 4 : Lancer les ventes
 - Écrire à votre **liste e-mail** (inscriptions reçues dans Netlify → Forms → `newsletter`) le jour de la sortie
@@ -83,9 +99,10 @@ Il utilise **Netlify Forms** : Netlify → votre site → **Forms** → **Form n
 pour recevoir chaque message par e-mail.
 
 ## Encaissement et impôts (Maroc)
-- Amazon et Lemon Squeezy versent l'argent **sur votre compte bancaire marocain**, TVA des acheteurs déjà gérée
-  par eux (Lemon Squeezy est « merchant of record » ; Amazon collecte la TVA sur les e-books).
-- Au Maroc, ce sont des revenus d'export imposables : statut **auto-entrepreneur** pour démarrer, rapatriement des
-  devises automatique puisque les virements arrivent au Maroc.
+- Amazon et Paddle vous versent l'argent, TVA des acheteurs déjà gérée par eux (Paddle est « merchant of
+  record » ; Amazon collecte la TVA sur les e-books). Vérifiez à l'inscription que leurs versements arrivent sur
+  votre compte bancaire marocain.
+- Au Maroc, ce sont des revenus d'export imposables : statut **auto-entrepreneur** pour démarrer ; les devises
+  doivent être rapatriées au Maroc.
 - À faire valider par un comptable marocain : la retenue américaine (formulaire W-8BEN) et le plafond de chiffre
-  d'affaires par client de l'auto-entrepreneur (vos « clients » officiels sont Amazon et Lemon Squeezy).
+  d'affaires par client de l'auto-entrepreneur (vos « clients » officiels sont Amazon et Paddle).
