@@ -49,7 +49,11 @@ window.STORE_LINKS = {
   document.addEventListener('DOMContentLoaded', function () {
     var links = window.STORE_LINKS || {};
     var paddle = links.paddle || {};
-    var directSale = !!(paddle.clientToken && paddle.priceId);
+    // A sandbox (test) checkout is only offered on test hosts: this computer and Netlify previews
+    // (names containing "--"). The public site shows "coming soon" until the live Paddle keys are in place.
+    var host = window.location.hostname;
+    var testHost = host === 'localhost' || host === '127.0.0.1' || host.indexOf('--') !== -1;
+    var directSale = !!(paddle.clientToken && paddle.priceId) && (paddle.environment === 'production' || testHost);
     var anyLink = false;
 
     document.querySelectorAll('[data-store]').forEach(function (button) {

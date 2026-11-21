@@ -14,6 +14,8 @@
         .thanks .buy-buttons { justify-content: center; margin: 28px 0; }
         .thanks .note { color: #5b6b73; font-size: 0.95rem; }
         .thanks .error { color: #b42318; }
+        .thanks .others { margin-top: 8px; line-height: 2; }
+        .thanks .others a { margin: 0 6px; white-space: nowrap; }
     </style>
 </head>
 <body>
@@ -30,6 +32,7 @@
             <a id="pdf" class="button button-download">PDF</a>
             <a id="epub" class="button button-download button-secondary">EPUB</a>
         </div>
+        <p class="note others" id="others"></p>
         <p class="note" id="help"></p>
         <p><a id="back" href="index.html"></a></p>
     </main>
@@ -40,6 +43,7 @@
                 en: {
                     title: 'Thank you for your purchase!',
                     intro: 'Your copy of Breathing and Relaxation is ready. Download it in the format you prefer:',
+                    others: 'Your purchase also includes the other language editions:',
                     pdf: 'Download the PDF',
                     epub: 'Download the EPUB (Kindle, Apple Books, e-readers)',
                     help: 'Paddle, our reseller, has e-mailed you the receipt. Keep this page’s address to download the book again later.',
@@ -48,7 +52,8 @@
                 },
                 fr: {
                     title: 'Merci pour votre achat !',
-                    intro: 'Votre exemplaire de Breathing and Relaxation est prêt. Téléchargez-le dans le format de votre choix :',
+                    intro: 'Votre exemplaire de Respiration et relaxation est prêt. Téléchargez-le dans le format de votre choix :',
+                    others: 'Votre achat comprend aussi les autres éditions :',
                     pdf: 'Télécharger le PDF',
                     epub: 'Télécharger l’EPUB (Kindle, Apple Books, liseuses)',
                     help: 'Paddle, notre revendeur, vous a envoyé le reçu par e-mail. Gardez l’adresse de cette page pour retélécharger le livre plus tard.',
@@ -57,7 +62,8 @@
                 },
                 es: {
                     title: '¡Gracias por su compra!',
-                    intro: 'Su ejemplar de Breathing and Relaxation está listo. Descárguelo en el formato que prefiera:',
+                    intro: 'Su ejemplar de Respiración y relajación está listo. Descárguelo en el formato que prefiera:',
+                    others: 'Su compra incluye también las demás ediciones:',
                     pdf: 'Descargar el PDF',
                     epub: 'Descargar el EPUB (Kindle, Apple Books, lectores)',
                     help: 'Paddle, nuestro revendedor, le ha enviado el recibo por correo. Guarde la dirección de esta página para volver a descargar el libro.',
@@ -66,7 +72,8 @@
                 },
                 ar: {
                     title: 'شكرًا على شرائك!',
-                    intro: 'نسختك من كتاب Breathing and Relaxation جاهزة. حمّلها بالصيغة التي تفضلها:',
+                    intro: 'نسختك من كتاب التنفّس والاسترخاء جاهزة. حمّلها بالصيغة التي تفضلها:',
+                    others: 'يشمل شراؤك أيضًا الطبعات بلغات أخرى:',
                     pdf: 'تحميل PDF',
                     epub: 'تحميل EPUB (كيندل، Apple Books، أجهزة القراءة)',
                     help: 'أرسل إليك Paddle، موزّعنا، الإيصال عبر البريد. احتفظ بعنوان هذه الصفحة لتحميل الكتاب مجددًا لاحقًا.',
@@ -92,6 +99,7 @@
                 intro.className = 'error';
                 document.querySelector('.buy-buttons').hidden = true;
                 document.getElementById('help').hidden = true;
+                document.getElementById('others').hidden = true;
                 return;
             }
             document.getElementById('intro').textContent = t.intro;
@@ -99,8 +107,25 @@
             var epub = document.getElementById('epub');
             pdf.textContent = t.pdf;
             epub.textContent = t.epub;
-            pdf.href = '/api/ebook-download?format=pdf&txn=' + encodeURIComponent(txn);
-            epub.href = '/api/ebook-download?format=epub&txn=' + encodeURIComponent(txn);
+            var link = function (format, l) {
+                return '/api/ebook-download?format=' + format + '&lang=' + l + '&txn=' + encodeURIComponent(txn);
+            };
+            pdf.href = link('pdf', lang);
+            epub.href = link('epub', lang);
+            // One purchase includes every language edition.
+            var NAMES = { en: 'English', fr: 'Français', es: 'Español', ar: 'العربية' };
+            var others = document.getElementById('others');
+            others.appendChild(document.createTextNode(t.others + ' '));
+            Object.keys(NAMES).forEach(function (l) {
+                if (l === lang) return;
+                ['pdf', 'epub'].forEach(function (format) {
+                    var a = document.createElement('a');
+                    a.href = link(format, l);
+                    a.textContent = NAMES[l] + ' (' + format.toUpperCase() + ')';
+                    a.lang = l;
+                    others.appendChild(a);
+                });
+            });
         })();
     </script>
 </body>

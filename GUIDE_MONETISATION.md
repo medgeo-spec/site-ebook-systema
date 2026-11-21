@@ -16,18 +16,28 @@ Stratégie retenue :
 Dans `private/ebook/` (non publié sur le site) :
 | Fichier | Usage |
 |---|---|
-| `Breathing-And-Relaxation-2nd-Edition-EN.epub` | À envoyer sur Amazon KDP, et à vendre sur votre site |
-| `Breathing-And-Relaxation-2nd-Edition-EN.pdf` | À vendre sur votre site (et offert dans YARAM) |
-| `cover/cover-2560x1600.jpg` | Couverture pour Amazon (taille recommandée 2560 × 1600) |
+Le livre existe en **4 langues** (2e édition, même contenu) :
+| Langue | PDF et EPUB (`private/ebook/`) | Couverture (`private/ebook/cover/`) | Extrait gratuit (`ebook/`, public) |
+|---|---|---|---|
+| Anglais | `Breathing-And-Relaxation-2nd-Edition-EN` | `cover-2560x1600.jpg` | `Breathing-And-Relaxation-Free-Sample-EN.pdf` |
+| Français | `Respiration-et-Relaxation-2e-Edition-FR` | `cover-fr.jpg` | `Respiration-et-Relaxation-Extrait-Gratuit-FR.pdf` |
+| Espagnol | `Respiracion-y-Relajacion-2a-Edicion-ES` | `cover-es.jpg` | `Respiracion-y-Relajacion-Muestra-Gratis-ES.pdf` |
+| Arabe | `Breathing-And-Relaxation-2nd-Edition-AR` | `cover-ar.jpg` | `Breathing-And-Relaxation-Free-Sample-AR.pdf` |
 
-Sur le site (public) : `ebook/Breathing-And-Relaxation-Free-Sample-EN.pdf`, l'extrait gratuit (introduction + chapitres 1 et 2).
+- **Amazon KDP** : un livre par langue (envoyer l'EPUB et la couverture de chaque langue). KDP accepte le français,
+  l'espagnol et l'arabe.
+- **Votre site** : un seul achat Paddle donne accès aux 4 langues (PDF + EPUB). La page de remerciement propose la
+  langue de l'acheteur, puis les autres.
+- **Couvertures** : taille 1600 × 2560 (recommandée par KDP).
 
-**Modifier le livre** : éditer `private/ebook/source/book-en.html`, puis dans `private/ebook/tools` :
-`npm install` (une fois) et `npm run build`. Les trois fichiers sont régénérés. Recopier ensuite le PDF et l'EPUB
-dans `YARAM/private/ebook/`.
+**Modifier le livre** : éditer `private/ebook/source/book-<langue>.html` (en, fr, es, ar), puis dans
+`private/ebook/tools` : `npm install` (une fois) et `npm run build` (toutes les langues) ou `npm run build -- fr`
+(une seule). Couverture, PDF, extrait et EPUB sont régénérés. Recopier ensuite les PDF et EPUB dans
+`YARAM/private/ebook/`.
 
-👉 **Avant de publier** : relire les passages « New in the 2nd edition » et compléter « About the Author »
-(`private/ebook/source/book-en.html`), puis relancer `npm run build`.
+**Achat sur le site** : tant que `js/store-links.js` est en mode `sandbox`, le bouton d'achat n'apparaît qu'en local
+et sur les aperçus Netlify ; le site public affiche « bientôt disponible ». Il apparaît partout dès le passage en
+mode réel (`environment: 'production'`, étape Paddle ci-dessous).
 
 ---
 

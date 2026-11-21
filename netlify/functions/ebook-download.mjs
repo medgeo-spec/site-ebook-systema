@@ -1,7 +1,8 @@
 /**
  * Delivers the purchased e-book. Paddle sells it (merchant of record) but does not deliver files, so after
  * payment the thank-you page links here with the Paddle transaction id:
- *   /api/ebook-download?txn=txn_...&format=pdf|epub
+ *   /api/ebook-download?txn=txn_...&format=pdf|epub&lang=en|fr|es|ar
+ * One purchase gives access to every language edition.
  * The transaction is checked with the Paddle API (paid, and for the e-book's price) before the file is sent.
  * The files live in private/ebook/, which is never published (see _redirects) and is bundled with this
  * function only (netlify.toml → included_files).
@@ -13,9 +14,18 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const FILES = {
-  pdf: { name: 'Breathing-And-Relaxation-2nd-Edition-EN.pdf', type: 'application/pdf' },
-  epub: { name: 'Breathing-And-Relaxation-2nd-Edition-EN.epub', type: 'application/epub+zip' },
+// File names per language, as written by private/ebook/tools/build.mjs.
+export const EDITIONS = {
+  en: 'Breathing-And-Relaxation-2nd-Edition-EN',
+  fr: 'Respiration-et-Relaxation-2e-Edition-FR',
+  es: 'Respiracion-y-Relajacion-2a-Edicion-ES',
+  ar: 'Breathing-And-Relaxation-2nd-Edition-AR',
+};
+const FORMATS = { pdf: 'application/pdf', epub: 'application/epub+zip' };
+
+export const resolveFile = (format = 'pdf', lang = 'en') => {
+  if (!Object.hasOwn(EDITIONS, lang) || !Object.hasOwn(FORMATS, format)) return null;
+  return { name: `${EDITIONS[lang]}.${format}`, type: FORMATS[format] };
 };
 const TXN_PATTERN = /^txn_[a-z0-9]{20,40}$/;
 const PAID_STATUSES = ['paid', 'completed'];
@@ -40,7 +50,7 @@ export async function isPaidEbookTransaction(transactionId, { apiKey, priceId, f
 export default async (req) => {
   const url = new URL(req.url);
   const txn = url.searchParams.get('txn') || '';
-  const file = FILES[url.searchParams.get('format') || 'pdf'];
+  const file = resolveFile(url.searchParams.get('format') || 'pdf', url.searchParams.get('lang') || 'en');
   const apiKey = process.env.PADDLE_API_KEY || '';
   const priceId = process.env.PADDLE_EBOOK_PRICE || '';
 

@@ -1,7 +1,7 @@
 // node --test netlify/functions/
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { isPaidEbookTransaction } from './ebook-download.mjs';
+import { isPaidEbookTransaction, resolveFile, EDITIONS } from './ebook-download.mjs';
 
 const PRICE = 'pri_ebook';
 const fakePaddle = (status, data) => async () =>
@@ -21,4 +21,20 @@ test('unpaid transactions, other products and unknown ids are refused', async ()
 
 test('a Paddle outage is reported, not treated as a refusal', async () => {
   await assert.rejects(check(fakePaddle(500, null)));
+});
+
+test('every language edition exists in both formats, and unknown values are refused', async () => {
+  const { existsSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  for (const lang of Object.keys(EDITIONS)) {
+    for (const format of ['pdf', 'epub']) {
+      const file = resolveFile(format, lang);
+      assert.ok(existsSync(join(process.cwd(), 'private', 'ebook', file.name)), `missing ${file.name}`);
+    }
+  }
+  assert.equal(resolveFile('pdf', 'de'), null);
+  assert.equal(resolveFile('docx', 'en'), null);
+  assert.equal(resolveFile('pdf', '../../.env'), null);
+  assert.equal(resolveFile('pdf', 'constructor'), null);
+  assert.equal(resolveFile('toString', 'en'), null);
 });
