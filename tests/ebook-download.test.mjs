@@ -1,7 +1,7 @@
-// node --test netlify/functions/
+// node --test tests/ebook-download.test.mjs
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { isPaidEbookTransaction, resolveFile, EDITIONS } from './ebook-download.mjs';
+import { isPaidEbookTransaction, resolveFile, EDITIONS } from '../netlify/functions/ebook-download.mjs';
 
 const PRICE = 'pri_ebook';
 const fakePaddle = (status, data) => async () =>
